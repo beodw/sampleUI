@@ -1,8 +1,8 @@
 // Variables for commonly used colors
 $white: #fff;
 $black: black;
-$grey: #ccc;
-$turquoise: #00ced1;
+$grey: #f0efed;
+$turquoise:#66dbed;
 
 // Text sizing utility classes
 $text-sizes: (
@@ -20,6 +20,7 @@ $text-sizes: (
   }
 }
 
+
 // Flexbox layout utility classes
 .flex-utilities {
   display: flex;
@@ -28,6 +29,9 @@ $text-sizes: (
   }
   &.justify-start {
     justify-content: start;
+  }
+  &.justify-between {
+    justify-content: space-between;
   }
   &.items-center {
     align-items: center;
@@ -99,6 +103,17 @@ $text-sizes: (
   }
 }
 
+
+.text {
+    &.white {
+    background-color: $white;
+  }
+
+  &.bold{
+    font-weight: bold;
+  }
+}
+
 // Background color utility classes
 .bg {
   &.white {
@@ -114,6 +129,70 @@ $text-sizes: (
   }
   &.red {
     background-color: red;
+  }
+}
+.margin-utilities {
+  &.margin-y {
+    margin: 200px;
+  }
+  &.mr-10 {
+    margin-right: 10px;
+  }
+
+  &.margin-none {
+    margin: 0;
+  }
+
+  &.margin-sm {
+    margin: 0.25rem;
+  }
+
+  &.margin-md {
+    margin: 0.5rem;
+  }
+
+  &.margin-lg {
+    margin: 1rem;
+  }
+
+  &.margin-xl {
+    margin: 1.5rem;
+  }
+}
+
+
+.padding-utilities {
+  &.padding-none {
+    padding: 0;
+  }
+
+  &.padding-sm {
+    padding: 0.25rem;
+  }
+
+  &.padding-md {
+    padding: 0.5rem;
+  }
+
+  &.padding-lg {
+    padding: 1rem;
+  }
+
+  &.padding-xl {
+    padding: 1.5rem;
+  }
+}
+
+.box-shadow-utilities {
+  &.shadow-sm {
+       box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.13);
+  }
+}
+
+
+.border-utilities{
+  &.border-none {
+    border: none;
   }
 }
 
@@ -140,6 +219,32 @@ $text-sizes: (
   }
 }
 
+.cursor-pointer {
+   &:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    opacity: 1;
+  }
+}
+
+.outline-utilities {
+  &.outline-none {
+    outline: none;
+  }
+
+  &.outline-thin {
+    outline: 1px solid;
+  }
+
+  &.outline-medium {
+    outline: 2px solid;
+  }
+
+  &.outline-thick {
+    outline: 3px solid;
+  }
+}
+
+
 // Sidebar button utility classes
 .sidebar-button {
   display: flex;
@@ -160,8 +265,42 @@ $text-sizes: (
   }
 }
 
+.profile{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.button {
+  text-decoration: none;
+}
+
+.search{
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.outline-utilities{
+  &.outline-none {
+    outline: none;
+  }
+}
+.absolute-width{
+  &.w-25 {
+    width: 25px;
+  }
+}
 // Height and Width utility classes relative to parent
 .parent-relative {
+   &.w-5 {
+    width: 5%;
+  }
+
+   &.w-10 {
+    width: 10%;
+  }
+  
   &.w-25 {
     width: 25%;
   }
@@ -174,8 +313,16 @@ $text-sizes: (
     width: 75%;
   }
 
+  &.w-80 {
+    width: 80%;
+  }
+
   &.w-100 {
     width: 100%;
+  }
+
+  &.h-10 {
+    height: 10%;
   }
 
   &.h-25 {

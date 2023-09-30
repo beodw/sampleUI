@@ -24,6 +24,14 @@ $text-sizes: (
 // Flexbox layout utility classes
 .flex-utilities {
   display: flex;
+
+  &.expand {
+    flex-direction: column; /* or row for a horizontal layout */
+    flex: 1; /* This allows the container to expand and fill available space */
+  }
+  &.justify-end {
+    justify-content: end;
+  }
   &.justify-center {
     justify-content: center;
   }
@@ -139,6 +147,10 @@ $text-sizes: (
     margin-right: 10px;
   }
 
+  &.mt-10 {
+    margin-top: 10px;
+  }
+
   &.margin-none {
     margin: 0;
   }
@@ -245,6 +257,8 @@ $text-sizes: (
 }
 
 
+
+
 // Sidebar button utility classes
 .sidebar-button {
   display: flex;
@@ -335,6 +349,18 @@ $text-sizes: (
 
   &.h-75 {
     height: 75%;
+  }
+
+  &.h-80 {
+    height: 80%;
+  }
+
+  &.h-90 {
+    height: 90%;
+  }
+
+  &.h-92 {
+    height: 92%;
   }
 
   &.h-100 {

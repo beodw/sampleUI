@@ -15,11 +15,14 @@ import close from './assets/icons/close.svg';
 import more from './assets/icons/more.svg';
 import video from './assets/icons/video.svg';
 import flame from './assets/icons/flame.svg';
-
+import bell from './assets/icons/bell.svg';
+import messageIcon from './assets/icons/message.svg';
+import calendar from './assets/icons/calendar.svg';
+import Message from './components/Message';
 function App() {
   return (
-<div class="layout-utilities layout">
-  <div class="layout-utilities flex-utilities flex-col justify-between border-radius-utilities padding-utilities padding-sm parent-relative w-25 rounded-lg bg grey margin-utilities margin-md ">
+<div class="layout-utilities layout bg grey">
+  <div class="layout-utilities flex-utilities flex-col justify-between border-radius-utilities padding-utilities padding-sm parent-relative w-25 rounded-lg bg lightgrey margin-utilities margin-md .layout-utilities layout-sidebar">
     <div class="flex-utilities justify-start items-center">
         <img class="parent-relative h-50 w-25" src={brand}/>
         <h2>Logip</h2>
@@ -71,6 +74,7 @@ function App() {
         </a>
     </div>
   </div>
+  {/* Main Content */}
   <div class="layout-utilities layout-main bg grey">
     <div className='flex-utilities flex-row justify-between padding-utilities padding-lg border-radius-utilities rounded-lg bg white box-shadow-utilities shadow-sm'>
       <div className='flex-utilities flex-row'>
@@ -80,15 +84,25 @@ function App() {
             <div>Project Manager</div>
           </div>
       </div>
+      {/* <div className='bg grey border-radius-utilities rounded-lg padding-utilities padding-md parent-relative w-10 flex-utilities flex-row items-center justify-center'>
+        <img class="parent-relative w-25 h-75 margin-utilities" src={calendar} />
+        <div className='text-md'>27 Feb</div>
+      </div> */}
 
-      <div className='flex-utilities flex-col'>
-        <div className='bg grey search flex-utilities flex-row'>
-          <img class="absolute-width w-25" src={searchIcon}/>
-            <input className='bg grey outline-utilities outline-none border-utilities border-none'/>
+      <div className='flex-utilities flex-row justify-end items-center parent-relative w-50'>
+        <div className='bg grey search flex-utilities flex-row parent-relative w-50 margin-utilities mr-10'>
+          <img class="parent-relative w-10 margin-utilities mr-10" src={searchIcon}/>
+          <input placeholder='Search' className='bg grey parent-relative w-90 outline-utilities outline-none border-utilities border-none'/>
+        </div>
+        <div className='bg grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center margin-utilities mr-10'>
+          <img className='parent-relative w-50 h-50' src={bell}/>
+        </div>
+        <div className='bg grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center'>
+           <img className='parent-relative w-50 h-50' src={messageIcon}/>
         </div>
       </div>
     </div>
-    <div className='flex-utilities flex-row bg  justify-between items-center parent-relative h-90'>
+    <div className='flex-utilities flex-row bg justify-between items-center parent-relative h-90'>
       <div className='flex-utilities flex-col parent-relative w-50 h-90 bg white border-radius-utilities rounded-lg padding-utilities padding-md'>
          <div className='parent-relative bg grey border-radius-utilities rounded-lg padding-utilities padding-md flex-utilities flex-col items-center justify-center'>
            <div className='parent-relative w-100 flex-utilities flex-row justify-end'>
@@ -111,10 +125,26 @@ function App() {
             </div>
            </div>
          </div>
+         <div className='parent-relative w-100 flex-utilities flex-row justify-center margin-utilities mt-10'>Today</div>
+         <div className='parent-relative w-100 h-100 margin-utilities mt-10 flex-utilities flex-col items-between'>
+            <Message isSentByMe={false} />
+            <Message isSentByMe={false} />
+            
+         </div>
+        
       </div>
-      <div>
-        <div>top right box</div>
-        <div>bottom right box</div>
+      <div className='parent-relative h-90 w-45 flex-utilities flex-col justify-between padding-utilities padding-md'>
+        <div className='bg white padding-utilities padding-md parent-relative h-45 border-radius-utilities rounded-lg'>
+          <div className='flex-utilities flex-col'>
+            <div className='flex-utilities flex-row justify-between'>
+              <span>Team</span>
+              <div className='padding-utilities padding-sm flex-utilities flex-row bg turquoise border-radius-utilities rounded-md'>
+                63
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='bg white parent-relative h-48 border-radius-utilities rounded-lg padding-utilities padding-md'>Meeting</div>
       </div>
     </div>
   </div>

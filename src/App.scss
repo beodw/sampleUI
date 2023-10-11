@@ -3,9 +3,11 @@ $white: #fff;
 $black: black;
 $grey: #f0efed;
 $turquoise:#66dbed;
+$lightgrey: #f2f4f5;
 
 // Text sizing utility classes
 $text-sizes: (
+  xxs: 12px,
   xs: 14px,
   sm: 16px,
   md: 18px,
@@ -43,6 +45,10 @@ $text-sizes: (
   }
   &.items-center {
     align-items: center;
+  }
+
+  &.items-between {
+    align-items: space-between;
   }
 
   &.flex-row {
@@ -106,7 +112,7 @@ $text-sizes: (
 
   @media (min-width: 768px) {
     .layout-sidebar {
-      display: block; // Show sidebar on larger screens
+      display: flex; // Show sidebar on larger screens
     }
   }
 }
@@ -137,6 +143,9 @@ $text-sizes: (
   }
   &.red {
     background-color: red;
+  }
+  &.lightgrey{
+    background-color: $lightgrey;
   }
 }
 .margin-utilities {
@@ -229,6 +238,12 @@ $text-sizes: (
   &.rounded-full {
     border-radius: 50%;
   }
+
+  &.message-bubble {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
 }
 
 .cursor-pointer {
@@ -305,6 +320,8 @@ $text-sizes: (
     width: 25px;
   }
 }
+
+
 // Height and Width utility classes relative to parent
 .parent-relative {
    &.w-5 {
@@ -314,9 +331,26 @@ $text-sizes: (
    &.w-10 {
     width: 10%;
   }
+
+  &.w-15 {
+    width: 15%;
+  }
   
   &.w-25 {
     width: 25%;
+  }
+
+  &.w-40 {
+    width: 40%;
+  }
+
+
+  &.w-45 {
+    width: 45%;
+  }
+
+  &.w-48 {
+    width: 48%;
   }
 
   &.w-50 {
@@ -331,6 +365,14 @@ $text-sizes: (
     width: 80%;
   }
 
+  &.w-90 {
+    width: 90%;
+  }
+
+  &.w-92 {
+    width: 92%;
+  }
+
   &.w-100 {
     width: 100%;
   }
@@ -339,12 +381,32 @@ $text-sizes: (
     height: 10%;
   }
 
+  &.h-15 {
+    height: 10%;
+  }
+
   &.h-25 {
     height: 25%;
   }
 
+  &.h-40 {
+    height: 40%;
+  }
+
+  &.h-45 {
+    height: 45%;
+  }
+
+  &.h-48 {
+    height: 48%;
+  }
+
   &.h-50 {
     height: 50%;
+  }
+
+  &.h-60 {
+    height: 60%;
   }
 
   &.h-75 {

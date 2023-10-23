@@ -17,7 +17,12 @@ import video from './assets/icons/video.svg';
 import flame from './assets/icons/flame.svg';
 import bell from './assets/icons/bell.svg';
 import messageIcon from './assets/icons/message.svg';
+import mail from './assets/icons/mail.svg';
 import calendar from './assets/icons/calendar.svg';
+import attachment from './assets/icons/attachment.svg';
+import smile from './assets/icons/smile.svg';
+import mic from './assets/icons/mic.svg';
+import plus from './assets/icons/plus.svg';
 import Message from './components/Message';
 function App() {
   return (
@@ -78,7 +83,9 @@ function App() {
   <div class="layout-utilities layout-main bg grey">
     <div className='flex-utilities flex-row justify-between padding-utilities padding-lg border-radius-utilities rounded-lg bg white box-shadow-utilities shadow-sm'>
       <div className='flex-utilities flex-row'>
-         <div className='bg red padding-utilities padding-sm profile margin-utilities mr-10'></div>
+         <div className='profile margin-utilities mr-10'>
+          <img src={avatar} className='parent-relative w-100 h-100' />
+         </div>
           <div className='flex-utilities flex-col'>
             <div>Margaret Fletcher</div>
             <div>Project Manager</div>
@@ -94,10 +101,10 @@ function App() {
           <img class="parent-relative w-10 margin-utilities mr-10" src={searchIcon}/>
           <input placeholder='Search' className='bg grey parent-relative w-90 outline-utilities outline-none border-utilities border-none'/>
         </div>
-        <div className='bg grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center margin-utilities mr-10'>
+        <div className='max-w-md bg grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center margin-utilities mr-10'>
           <img className='parent-relative w-50 h-50' src={bell}/>
         </div>
-        <div className='bg grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center'>
+        <div className='bg max-w-md grey border-radius-utilities rounded-full padding-utilities padding-sm parent-relative h-80 w-10 flex-utilities flex-col justify-center items-center'>
            <img className='parent-relative w-50 h-50' src={messageIcon}/>
         </div>
       </div>
@@ -125,24 +132,57 @@ function App() {
             </div>
            </div>
          </div>
-         <div className='parent-relative w-100 flex-utilities flex-row justify-center margin-utilities mt-10'>Today</div>
+         <div className='parent-relative w-100 flex-utilities flex-row justify-center margin-utilities mt-10 text-xs text bold'>Today</div>
          <div className='parent-relative w-100 h-100 margin-utilities mt-10 flex-utilities flex-col items-between'>
             <Message isSentByMe={false} />
-            <Message isSentByMe={false} />
-            
+            <Message isSentByMe={false} />  
          </div>
+        <div className='parent-relative w-100 flex-utilities flex-row items-center justify-center'>
+            <div className='bg grey search flex-utilities flex-row parent-relative w-90'>
+              <img class="parent-relative max-w-sm w-10 margin-utilities mr-10" src={attachment}/>
+              <input placeholder='Write a message' className='bg grey parent-relative w-90 outline-utilities outline-none border-utilities border-none'/>
+              <img class="parent-relative max-w-sm w-10 margin-utilities mr-10" src={smile}/>
+              <img class="parent-relative max-w-sm w-10 margin-utilities mr-10" src={mic}/>
+            </div>
+        </div>
         
       </div>
       <div className='parent-relative h-90 w-45 flex-utilities flex-col justify-between padding-utilities padding-md'>
-        <div className='bg white padding-utilities padding-md parent-relative h-45 border-radius-utilities rounded-lg'>
-          <div className='flex-utilities flex-col'>
+        <div className='bg white padding-utilities padding-md parent-relative h-45 border-radius-utilities rounded-lg flex-utilities flex-col justify-between'>
+
             <div className='flex-utilities flex-row justify-between'>
-              <span>Team</span>
+              <span className='text bold'>Team</span>
               <div className='padding-utilities padding-sm flex-utilities flex-row bg turquoise border-radius-utilities rounded-md'>
-                63
+                <span className='text-xxs text bold'>63</span>
               </div>
             </div>
-          </div>
+              <div className='parent-relative h-75 flex-utilities flex-col justify-between'>
+                <div className='parent-relative h-65 flex-utilities flex-col justify-between'>
+                    {[1,2,3].map((el, index)=>
+                      <div key={index} className='flex-utilities flex-row justify-between items-center'>
+                        <div className='bg parent-relative h-30 bg  w-75 flex-utilities flex-row items-center'>
+                          {/* <div className='bg grey padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'> */}
+                            <img className='parent-relative max-w-md w-50 h-50' src={avatar}/>
+                          {/* </div> */}
+                          <div className='flex flex-col padding-utilities padding-sm'>
+                              <div className='text-xxs'>Billy Parker</div>
+                              <small className='text-xxs text-gray'>Project Manager</small>
+                          </div>
+                        </div>
+                        <div className='bg grey padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                          <img className='parent-relative w-50 h-50' src={mail}/>
+                        </div>
+                    </div>
+                  )}
+                </div>
+            </div>
+            <div className='flex-utilities flex-row w-100 items-center'>
+              <div className='mr-10 bg turquoise padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                <img className='parent-relative w-50 h-50' src={plus}/>
+              </div>
+              <span className='text bold text-xxs'>Invite new team member</span>
+            </div>
+         
         </div>
         <div className='bg white parent-relative h-48 border-radius-utilities rounded-lg padding-utilities padding-md'>Meeting</div>
       </div>

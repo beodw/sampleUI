@@ -2,7 +2,7 @@
 $white: #fff;
 $black: black;
 $grey: #f0efed;
-$turquoise:#66dbed;
+$turquoise:#aae3fa;
 $lightgrey: #f2f4f5;
 
 // Text sizing utility classes
@@ -321,7 +321,21 @@ $text-sizes: (
   }
 }
 
+$width-sizes: (
+  xxs: 20px,
+  xs: 14px,
+  sm: 16px,
+  md: 40px,
+  lg: 20px,
+  xl: 24px,
+  '2xl': 28px,
+);
 
+@each $size, $value in $width-sizes {
+  .max-w-#{$size} {
+    max-width: $value;
+  }
+}
 // Height and Width utility classes relative to parent
 .parent-relative {
    &.w-5 {
@@ -407,6 +421,9 @@ $text-sizes: (
 
   &.h-60 {
     height: 60%;
+  }
+   &.h-65 {
+    height: 65%;
   }
 
   &.h-75 {

@@ -22,36 +22,39 @@ import calendar from './assets/icons/calendar.svg';
 import attachment from './assets/icons/attachment.svg';
 import smile from './assets/icons/smile.svg';
 import mic from './assets/icons/mic.svg';
+import profile from './assets/icons/profile.svg';
+import clock from './assets/icons/clock.svg';
 import plus from './assets/icons/plus.svg';
 import Message from './components/Message';
+
 function App() {
   return (
 <div class="layout-utilities layout bg grey">
   <div class="layout-utilities flex-utilities flex-col justify-between border-radius-utilities padding-utilities padding-sm parent-relative w-25 rounded-lg bg lightgrey margin-utilities margin-md .layout-utilities layout-sidebar">
     <div class="flex-utilities justify-start items-center">
-        <img class="parent-relative h-50 w-25" src={brand}/>
+        <img class="parent-relative h-50 w-25 max-w-md" src={brand}/>
         <h2>Logip</h2>
     </div>
 
     <div class="flex-utilities.flex-col">
       <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-        <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={homeIcon}/>
+        <img class="parent-relative h-10 w-10 max-w-icon margin-utilities mr-10" src={homeIcon}/>
         <span>Home</span>
       </a>
       <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-        <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={projectsIcon}/>
+        <img class="parent-relative h-10 w-10 max-w-icon margin-utilities mr-10" src={projectsIcon}/>
         <span>Projects</span>
       </a>
       <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-        <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={tasksIcon}/>
+        <img class="parent-relative h-10 w-10 max-w-icon margin-utilities mr-10" src={tasksIcon}/>
         <span>Tasks</span>
       </a>
       <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-        <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={teamIcon}/>
+        <img class="parent-relative h-10 w-10 max-w-icon  margin-utilities mr-10" src={teamIcon}/>
         <span>Teams</span>
       </a>
       <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-        <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={settingsIcon}/>
+        <img class="parent-relative h-10 w-10 max-w-icon margin-utilities mr-10" src={settingsIcon}/>
         <span>Settings</span>
       </a>
     </div>
@@ -63,18 +66,18 @@ function App() {
             <p className='text bold margin-utilities mr-10'>Upgrade to Pro</p>
             <img src={flame} className='w-10 h-50 parent-relative'/>
           </div>
-          <small>Get 1 month free andn unlock all pro features</small>
-          <a href="#" className='button flex-utilities flex-col flex-center border-radius-utilities rounded-lg bg turquoise padding-utilities padding-md parent-relative w-50 margin-utilities margin-md'>Upgrade</a>
+          <small className='parent-relative'>Get 1 month free and unlock all pro features</small>
+          <a href="#" className='text black text-xs button flex-utilities flex-col flex-center border-radius-utilities rounded-lg bg turquoise padding-utilities padding-md parent-relative w-50 margin-utilities margin-md'>Upgrade</a>
         </div>
     </div>
     <div className='parent-relative h-10'></div>
     <div class="flex-utilities.flex-col">
          <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-          <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={help}/>
+          <img class="parent-relative h-10 w-10 max-w-icon  margin-utilities mr-10" src={help}/>
           <span>Help & information</span>
         </a>
         <a href="#" class="sidebar-button border-radius-utilities rounded-md">
-          <img class="parent-relative h-10 w-10 margin-utilities mr-10" src={logout}/>
+          <img class="parent-relative h-10 w-10 max-w-icon margin-utilities mr-10" src={logout}/>
           <span>Log Out</span>
         </a>
     </div>
@@ -82,13 +85,18 @@ function App() {
   {/* Main Content */}
   <div class="layout-utilities layout-main bg grey">
     <div className='flex-utilities flex-row justify-between padding-utilities padding-lg border-radius-utilities rounded-lg bg white box-shadow-utilities shadow-sm'>
-      <div className='flex-utilities flex-row'>
+      <div className='flex-utilities flex-row items-center'>
          <div className='profile margin-utilities mr-10'>
           <img src={avatar} className='parent-relative w-100 h-100' />
          </div>
-          <div className='flex-utilities flex-col'>
-            <div>Margaret Fletcher</div>
-            <div>Project Manager</div>
+          <div className='flex-utilities flex-col margin-utilities mr-10'>
+            <div className='text-xxs'>Margaret Fletcher</div>
+            <div className='text-xxs text grey-text'>Project Manager</div>
+          </div>
+          <div className='bg grey border-radius-utilities rounded-lg parent-relative w-30 flex-utilities flex-row justify-center items-center  padding-utilities padding-md margin-utilities ml-10'>
+            <img className='fixed-size w-20 h-20 margin-utilities mr-10' src={calendar}/>
+            {/* <input id='date-input' type='date' className='border-utilities border-none outline-utilities outline-none bg transparent' required={true} /> */}
+            <div className='text text-xxs'>27 feb</div>
           </div>
       </div>
       {/* <div className='bg grey border-radius-utilities rounded-lg padding-utilities padding-md parent-relative w-10 flex-utilities flex-row items-center justify-center'>
@@ -133,9 +141,11 @@ function App() {
            </div>
          </div>
          <div className='parent-relative w-100 flex-utilities flex-row justify-center margin-utilities mt-10 text-xs text bold'>Today</div>
-         <div className='parent-relative w-100 h-100 margin-utilities mt-10 flex-utilities flex-col items-between'>
+         <div className='hide-scrollbar mb-10 overflow-y-scroll parent-relative h-100 margin-utilities mt-10 flex-utilities flex-col items-between padding-utilities padding-x-sm'>
             <Message isSentByMe={false} />
+            <Message isSentByMe={true} />  
             <Message isSentByMe={false} />  
+            <Message isSentByMe={true} />  
          </div>
         <div className='parent-relative w-100 flex-utilities flex-row items-center justify-center'>
             <div className='bg grey search flex-utilities flex-row parent-relative w-90'>
@@ -152,8 +162,9 @@ function App() {
 
             <div className='flex-utilities flex-row justify-between'>
               <span className='text bold'>Team</span>
-              <div className='padding-utilities padding-sm flex-utilities flex-row bg turquoise border-radius-utilities rounded-md'>
-                <span className='text-xxs text bold'>63</span>
+              <div className='padding-utilities padding-sm flex-utilities flex-row items-center bg grey border-radius-utilities rounded-md'>
+                <img className='fixed-size w-12 h-20 margin-utilities mr-10' src={profile}/>
+                <span className='text-xxs text bold turquoise-text'>63</span>
               </div>
             </div>
               <div className='parent-relative h-75 flex-utilities flex-col justify-between'>
@@ -165,8 +176,8 @@ function App() {
                             <img className='parent-relative max-w-md w-50 h-50' src={avatar}/>
                           {/* </div> */}
                           <div className='flex flex-col padding-utilities padding-sm'>
-                              <div className='text-xxs'>Billy Parker</div>
-                              <small className='text-xxs text-gray'>Project Manager</small>
+                              <div className='text-xxs text bold'>Billy Parker</div>
+                              <small className='text-xxs text grey-text'>Project Manager</small>
                           </div>
                         </div>
                         <div className='bg grey padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
@@ -184,7 +195,47 @@ function App() {
             </div>
          
         </div>
-        <div className='bg white parent-relative h-48 border-radius-utilities rounded-lg padding-utilities padding-md'>Meeting</div>
+        <div className='bg white flex-utilities flex-col justify-between parent-relative h-48 border-radius-utilities rounded-lg padding-utilities padding-md'>
+          <div className='text grey-text text-xxs bold'>MEETING</div>
+          <div className='text bold text-md margin-utilities mt-10'>Project onboarding</div>
+          <div className='text grey-text text-xxs bold margin-utilities my-5'>Add description of your meeting</div>
+          <div className='parent-relative w-100 flex-utilities justify-between items-center bg grey border-radius-utilities rounded-md padding-utilities padding-y-sm'>
+            <div className='flex-utilities flex-row items-center'>
+              <div className='mr-10 bg tansparent padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                  <img className='parent-relative w-75 h-75' src={clock}/>
+              </div>
+              <div className='flex-utilities flex-row text-xxs text bold'>11:00 - 12:30</div>
+            </div>
+            <div className=' bg tansparent padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                <img className='parent-relative w-50 h-50' src={more}/>
+            </div>
+          </div>
+          <div className='margin-utilities mt-10 parent-relative w-100 flex-utilities justify-between items-center bg grey border-radius-utilities rounded-md padding-utilities padding-y-sm'>
+              <div className='flex-utilities flex-row items-center'>
+                <div className='mr-10 bg tansparent padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                    <img className='parent-relative w-75 h-75' src={calendar}/>
+                </div>
+                <div className='flex-utilities flex-row text-xxs text bold'>Monday, 20 February</div>
+              </div>
+              <div className='bg tansparent padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                  <img className='parent-relative w-50 h-50' src={more}/>
+              </div>
+          </div>
+          <h4>Attendees</h4>
+          <div className='flex-utilities flex-row items-center justify-between parent-relative w-100'>
+            <div className='flex-utilities flex-row parent-relative w-50'>
+              <div className='parent-relative w-50 bg red h-50'>
+                {/* <div className='absolute fixed-size h-40 w-40 bg turquoise border-radius-utilities rounded-full'>s</div> */}
+              </div>
+            </div>
+            <div className='flex-utilities flex-row items-center'>
+              <span className='parent-relative text bold text-xxs margin-utilities mr-5'>Send invitation link</span>
+              <div className='bg turquoise padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
+                <img className='parent-relative w-50 h-50' src={plus}/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

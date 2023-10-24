@@ -2,8 +2,10 @@
 $white: #fff;
 $black: black;
 $grey: #f0efed;
+$textGrey:#a3a3a3;
 $turquoise:#aae3fa;
 $lightgrey: #f2f4f5;
+$turquoiseText:#3399ff;
 
 // Text sizing utility classes
 $text-sizes: (
@@ -22,6 +24,31 @@ $text-sizes: (
   }
 }
 
+$absolute-top-positions: (
+  '0': 0px,
+  '10': 10px,
+  '50': 50%,
+  '100': 100%,
+);
+
+@each $size, $value in $absolute-top-positions {
+  .bottom-#{$size} {
+    font-size: $value;
+  }
+}
+
+// input[type=date]:required:invalid::-webkit-datetime-edit {
+//     color: transparent;
+// }
+// input[type=date]:focus::-webkit-datetime-edit {
+//     color: black !important;
+// }
+
+// input[type="date"]::-webkit-inner-spin-button,
+// input[type="date"]::-webkit-calendar-picker-indicator {
+//     display: none;
+//     -webkit-appearance: none;
+// }
 
 // Flexbox layout utility classes
 .flex-utilities {
@@ -49,6 +76,10 @@ $text-sizes: (
 
   &.items-between {
     align-items: space-between;
+  }
+
+  &.items-end {
+    align-items: end;
   }
 
   &.flex-row {
@@ -120,16 +151,29 @@ $text-sizes: (
 
 .text {
     &.white {
-    background-color: $white;
+    color: $white;
+  }
+
+  &.grey-text {
+    color: $textGrey;
+  }
+  &.turquoise-text{
+    color: $turquoiseText;
   }
 
   &.bold{
     font-weight: bold;
   }
+  &.black{
+    color: black;
+  }
 }
 
 // Background color utility classes
 .bg {
+  &.transparent{
+    background-color: transparent;
+  }
   &.white {
     background-color: $white;
   }
@@ -148,9 +192,27 @@ $text-sizes: (
     background-color: $lightgrey;
   }
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .margin-utilities {
   &.margin-y {
     margin: 200px;
+  }
+  &.mr-5 {
+    margin-right: 5px;
   }
   &.mr-10 {
     margin-right: 10px;
@@ -158,6 +220,15 @@ $text-sizes: (
 
   &.mt-10 {
     margin-top: 10px;
+  }
+
+  &.my-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  &.mb-10{
+    margin-bottom: 10px;
   }
 
   &.margin-none {
@@ -185,6 +256,16 @@ $text-sizes: (
 .padding-utilities {
   &.padding-none {
     padding: 0;
+  }
+
+  &.padding-y-sm {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+   &.padding-x-sm {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   &.padding-sm {
@@ -244,6 +325,11 @@ $text-sizes: (
     border-top-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
   }
+  &.message-bubble-left{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
 }
 
 .cursor-pointer {
@@ -295,8 +381,8 @@ $text-sizes: (
 }
 
 .profile{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 .button {
@@ -329,12 +415,24 @@ $width-sizes: (
   lg: 20px,
   xl: 24px,
   '2xl': 28px,
+  'icon': 25px,
 );
 
 @each $size, $value in $width-sizes {
   .max-w-#{$size} {
     max-width: $value;
   }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed-size {
+  &.w-40{ width:40px;}
+  &.w-12{ width:12px;}
+  &.w-40{ width:40px;}
+  &.h-20{ height:20px;}
 }
 // Height and Width utility classes relative to parent
 .parent-relative {

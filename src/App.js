@@ -223,13 +223,29 @@ function App() {
           </div>
           <h4>Attendees</h4>
           <div className='flex-utilities flex-row items-center justify-between parent-relative w-100'>
-            <div className='flex-utilities flex-row parent-relative w-50'>
-              <div className='parent-relative w-50 bg red h-50'>
-                {/* <div className='absolute fixed-size h-40 w-40 bg turquoise border-radius-utilities rounded-full'>s</div> */}
+            <div className='flex-utilities flex-row parent-relative'>
+              <div className='parent-relative flex-utilities flex-row w-50 h-50'>
+                      {
+                        [1,2,3,4,5,6].map(
+                            (v, i) =>
+
+                          <div style={{left:`${i > 0 ? '-' + (i*6) +'px': '0px'}`}} className={`rounded-contact-icons ${i == 5  ? 'bg turquoise flex-utilities justify-center items-center' : ''}`}>
+                            {
+                              i == 5 ?
+                                <div style={{height: '25px', width:'25px', display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                                  <img className='fixed-size h-8 w-8' src={plus}/>
+                                  <span className='text-xxxs'>2</span>
+                                </div>
+                              :
+                              <img className='fixed-size h-25 w-25' src={avatar}/>
+                            }
+                          </div>
+                        )
+                      }
               </div>
             </div>
             <div className='flex-utilities flex-row items-center'>
-              <span className='parent-relative text bold text-xxs margin-utilities mr-5'>Send invitation link</span>
+              <span className='parent-relative text bold text-xxs margin-utilities mr-5 layout-utilities md-show'>Send invitation link</span>
               <div className='bg turquoise padding-utilities padding-sm profile margin-utilities flex-utilities justify-center items-center'>
                 <img className='parent-relative w-50 h-50' src={plus}/>
               </div>

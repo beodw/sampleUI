@@ -9,6 +9,7 @@ $turquoiseText:#3399ff;
 
 // Text sizing utility classes
 $text-sizes: (
+  xxxs: 10px,
   xxs: 12px,
   xs: 14px,
   sm: 16px,
@@ -24,16 +25,50 @@ $text-sizes: (
   }
 }
 
-$absolute-top-positions: (
+$relative-positions: (
   '0': 0px,
   '10': 10px,
-  '50': 50%,
+  '20': 20px,
+  '50': 50px,
   '100': 100%,
 );
 
-@each $size, $value in $absolute-top-positions {
-  .bottom-#{$size} {
-    font-size: $value;
+@each $position, $value in $relative-positions {
+  .bottom-#{$position} {
+    bottom: $value;
+  }
+  .left-#{position}{
+    left: $value;
+  }
+  .right-#{position} {
+    right: $value;
+  }
+
+  .top-#{position} {
+    top: $value;
+  }
+}
+
+$margin-values: (
+  '0': 0px,
+  '10': 0px,
+  '20': 20px,
+  '50': 50px,
+  '100': 100px,
+);
+
+@each $position, $value in $margin-values {
+  .ml-#{$position} {
+    margin-left: $value;
+  }
+  .mr-#{position}{
+    margin-right: $value;
+  }
+  .mb-#{position} {
+    margin-bottom: $value;
+  }
+  .mt-#{position} {
+    margin-top: $value;
   }
 }
 
@@ -141,11 +176,23 @@ $absolute-top-positions: (
     padding: 20px;
   }
 
+  &.md-show{
+    display: none;
+  }
+
   @media (min-width: 768px) {
     .layout-sidebar {
       display: flex; // Show sidebar on larger screens
     }
   }
+
+   @media (min-width: 1000px) {
+    .md-show {
+      display: flex; // Show on larger screens
+    }
+  }
+
+
 }
 
 
@@ -298,6 +345,15 @@ $absolute-top-positions: (
   }
 }
 
+.rounded-contact-icons{
+  border: 2px solid white;
+  border-radius: 100%;
+  position: relative;
+  height:25px;
+  width: 25px;
+
+}
+
 // Border radius utility classes
 .border-radius-utilities {
   &.rounded-none {
@@ -429,10 +485,24 @@ $width-sizes: (
 }
 
 .fixed-size {
+  &.w-17{ width:17px;}
+  &.w-10{ width:10px;}
+  &.w-8{ width:8px;}
   &.w-40{ width:40px;}
+  &.w-25{ width:25px;}
+  &.w-50{ width:50px;}
+  &.w-60{ width:60px;}
   &.w-12{ width:12px;}
-  &.w-40{ width:40px;}
+  &.h-8{ height:8px;}
+  &.h-10{ height:10px;}
+  &.h-17{ height:17px;}
   &.h-20{ height:20px;}
+  &.h-50{ height:50px;}
+  &.h-25{ height:25px;}
+}
+
+.position-relative {
+  position: relative;
 }
 // Height and Width utility classes relative to parent
 .parent-relative {
